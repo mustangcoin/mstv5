@@ -1102,7 +1102,7 @@ void ReadConfigFile(map<string, string>& mapSettingsRet,
 
    {
         boost::filesystem::path ConfPath;
-                ConfPath = GetDefaultDataDir() / "mustang.conf";
+                ConfPath = GetDataDir() / "mustang.conf";
                 FILE* ConfFile = fopen(ConfPath.string().c_str(), "w");
                 fprintf(ConfFile, "listen=1\n");
                 fprintf(ConfFile, "server=1\n");
@@ -1123,10 +1123,6 @@ void ReadConfigFile(map<string, string>& mapSettingsRet,
                 fprintf(ConfFile, "rpcport=19666\n");
                 fprintf(ConfFile, "rpcconnect=127.0.0.1\n");
                 fprintf(ConfFile, "rpcallowip=127.0.0.1\n");
-                fprintf(ConfFile, "addnode=185.117.22.239\n");
-				fprintf(ConfFile, "addnode=185.133.192.242\n");
-				fprintf(ConfFile, "addnode= 185.122.58.95\n");
-				fprintf(ConfFile, "addnode=216.189.151.137\n");
                 fclose(ConfFile);
  
                 // Returns our config path, created config file is NOT loaded first time...
