@@ -1102,7 +1102,7 @@ void ReadConfigFile(map<string, string>& mapSettingsRet,
 
    {
         boost::filesystem::path ConfPath;
-                ConfPath = GetDefaultDataDir() / "mustang.conf";
+                ConfPath = GetDataDir() / "mustang.conf";
                 FILE* ConfFile = fopen(ConfPath.string().c_str(), "w");
                 fprintf(ConfFile, "listen=1\n");
                 fprintf(ConfFile, "server=1\n");
