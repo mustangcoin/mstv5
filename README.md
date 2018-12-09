@@ -35,15 +35,28 @@
 - listen=1
 - rpcallowip=127.0.0.1
 
-- addnode=185.122.59.164
-- addnode=185.117.22.239
-- addnode=185.122.58.95
-- addnode=51.254.181.195
+- addnode=seed.mustangcoin.xyz
+- addnode=seed02.mustangcoin.xyz
+- addnode=seed03.mustangcoin.xyz
 
 ## Wallets:
 
 - http://mustangcoin.xyz/#services
-- https://github.com/mustangcoin/mst-v3/releases
+
+## Blockchain Explorers:
+
+- https://chainz.cryptoid.info/mst/
+- http://chains.sye.host/mst/index.php
+
+## Peers/Nodes and Blockchain Stats 
+
+- https://www.coinexchange.io/network/peers/MST
+- http://chains.sye.host/mstnode/
+
+## Exchnages:
+
+- https://yobit.net/en/trade/MST/BTC
+- https://www.coinexchange.io/market/MST/BTC
 
 ## Shop:
 
@@ -51,7 +64,7 @@
 
 ## Social Contacts:
 
-- http://mustangcoin.xyz/
+- https://mustangcoin.xyz/
 - https://twitter.com/mustangcoin
 - https://bitcointalk.org/index.php?topic=1609008.0
 
@@ -62,3 +75,4 @@
 - If it is a more complicated or potentially controversial change, then the change may be discussed in the pull request, or the        requester may be asked to start a discussion for a broader community discussion.
 - The patch will be accepted if there is broad consensus that it is a good thing. Developers should expect to rework and resubmit patches if they don't match the project's coding conventions or are controversial.
 - From time to time a pull request will become outdated. If this occurs, and the pull is no longer automatically mergeable; a comment on the pull will be used to issue a warning of closure. Pull requests closed in this manner will have their corresponding issue labeled 'stagnant'.
+

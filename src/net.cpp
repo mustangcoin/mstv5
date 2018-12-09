@@ -362,11 +362,11 @@ bool GetMyExternalIP(CNetAddr& ipRet)
         //  <?php echo $_SERVER["REMOTE_ADDR"]; ?>
         if (nHost == 1)
         {
-        addrConnect = CService("91.198.22.70", 80); // checkip.dyndns.org
+            addrConnect = CService("91.198.22.70",80); // checkip.dyndns.org
 
             if (nLookup == 1)
             {
-             CService addrIP("checkip.dyndns.org", 0, true);
+                CService addrIP("checkip.dyndns.org", 80, true);
                 if (addrIP.IsValid())
                     addrConnect = addrIP;
             }
@@ -420,10 +420,19 @@ void ThreadGetMyExternalIP(void* parg)
 }
 
 
+
+
+
 void AddressCurrentlyConnected(const CService& addr)
 {
     addrman.Connected(addr);
 }
+
+
+
+
+
+
 
 CNode* FindNode(const CNetAddr& ip)
 {
@@ -1122,6 +1131,13 @@ void MapPort()
 #endif
 
 
+
+
+
+
+
+
+
 // DNS seeds
 // Each pair gives a source name and a seed name.
 // The first name is used as information source for addrman.
@@ -1188,6 +1204,18 @@ void ThreadDNSAddressSeed2(void* parg)
 
     printf("%d addresses found from DNS seeds\n", found);
 }
+
+
+
+
+
+
+
+
+
+
+
+
 unsigned int pnSeed[] =
 {
     0xD8BD9789, 0xB985C0F2, 0xB97A3A5F,

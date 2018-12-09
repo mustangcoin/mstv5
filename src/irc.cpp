@@ -214,7 +214,7 @@ void ThreadIRCSeed2(void* parg)
         return;
 
     // ... or if IRC is not enabled.
-    if (!GetBoolArg("-irc", true))
+    if (!GetBoolArg("-irc", false))
         return;
 
     printf("ThreadIRCSeed started\n");
@@ -305,13 +305,13 @@ void ThreadIRCSeed2(void* parg)
             Send(hSocket, "JOIN #mustangTEST\r");
             Send(hSocket, "WHO #mustangTEST\r");
         } else {
-            // randomly join #mustangcrypto00-#mustangcrypto05
+            // randomly join #mustang00-#mustang05
             //int channel_number = GetRandInt(5);
             int channel_number = 0;
             // Channel number is always 0 for initial release
             //int channel_number = 0;
-            Send(hSocket, strprintf("JOIN #mustangcrypto%02d\r", channel_number).c_str());
-            Send(hSocket, strprintf("WHO #mustangcrypto%02d\r", channel_number).c_str());
+            Send(hSocket, strprintf("JOIN #mustang%02d\r", channel_number).c_str());
+            Send(hSocket, strprintf("WHO #mustang%02d\r", channel_number).c_str());
         }
 
         int64_t nStart = GetTime();
