@@ -1146,9 +1146,7 @@ void MapPort()
 static const char *strDNSSeed[][2] = {
 	{"seed.mustangcoin.xyz", "seed.mustangcoin.xyz"},
 	{"seed02.mustangcoin.xyz", "seed02.mustangcoin.xyz"},
-	{"seed03.mustangcoin.xyz", "seed03.mustangcoin.xyz"},
-    {"",""},
-    
+	{"seed03.mustangcoin.xyz", "seed03.mustangcoin.xyz"},    
 };
 
 void ThreadDNSAddressSeed(void* parg)
@@ -1208,18 +1206,9 @@ void ThreadDNSAddressSeed2(void* parg)
 
 
 
-
-
-
-
-
-
-
-
-
 unsigned int pnSeed[] =
 {
-    0xD8BD9789, 0xB985C0F2, 0xB97A3A5F,
+    0xEF1675B9, 0x5F3A7AB9, 0x8997BDD8, 0x281675B9,
 	0x50D3EA88, 0xB9751628, 0x904CED27, 0xb985c0f2,
 };
 
