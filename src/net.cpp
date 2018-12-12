@@ -420,19 +420,10 @@ void ThreadGetMyExternalIP(void* parg)
     }
 }
 
-
-
-
-
 void AddressCurrentlyConnected(const CService& addr)
 {
     addrman.Connected(addr);
 }
-
-
-
-
-
 
 
 CNode* FindNode(const CNetAddr& ip)
@@ -553,10 +544,6 @@ void CNode::PushVersion()
                 nLocalHostNonce, FormatSubVersion(CLIENT_NAME, CLIENT_VERSION, std::vector<string>()), nBestHeight);
 }
 
-
-
-
-
 std::map<CNetAddr, int64_t> CNode::setBanned;
 CCriticalSection CNode::cs_setBanned;
 
@@ -622,15 +609,6 @@ void CNode::copyStats(CNodeStats &stats)
     X(nMisbehavior);
 }
 #undef X
-
-
-
-
-
-
-
-
-
 
 void ThreadSocketHandler(void* parg)
 {
@@ -1188,12 +1166,9 @@ void ThreadDNSAddressSeed2(void* parg)
     printf("%d addresses found from DNS seeds\n", found);
 }
 
-
-
 unsigned int pnSeed[] =
 {
-    0xEF1675B9, 0x5F3A7AB9, 0x8997BDD8, 0x281675B9,
-	0x50D3EA88, 0xB9751628, 0x904CED27, 0xb985c0f2,
+    0xEF1675B9, 0x8997BDD8,
 };
 
 void DumpAddresses()
