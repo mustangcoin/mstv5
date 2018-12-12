@@ -61,6 +61,7 @@ array<int, THREAD_MAX> vnThreadsRunning;
 static std::vector<SOCKET> vhListenSocket;
 CAddrMan addrman;
 
+
 vector<CNode*> vNodes;
 CCriticalSection cs_vNodes;
 map<CInv, CDataStream> mapRelay;
@@ -419,19 +420,10 @@ void ThreadGetMyExternalIP(void* parg)
     }
 }
 
-
-
-
-
 void AddressCurrentlyConnected(const CService& addr)
 {
     addrman.Connected(addr);
 }
-
-
-
-
-
 
 
 CNode* FindNode(const CNetAddr& ip)
@@ -552,10 +544,6 @@ void CNode::PushVersion()
                 nLocalHostNonce, FormatSubVersion(CLIENT_NAME, CLIENT_VERSION, std::vector<string>()), nBestHeight);
 }
 
-
-
-
-
 std::map<CNetAddr, int64_t> CNode::setBanned;
 CCriticalSection CNode::cs_setBanned;
 
@@ -621,15 +609,6 @@ void CNode::copyStats(CNodeStats &stats)
     X(nMisbehavior);
 }
 #undef X
-
-
-
-
-
-
-
-
-
 
 void ThreadSocketHandler(void* parg)
 {
@@ -976,14 +955,6 @@ void ThreadSocketHandler2(void* parg)
     }
 }
 
-
-
-
-
-
-
-
-
 #ifdef USE_UPNP
 void ThreadMapPort(void* parg)
 {
@@ -1130,14 +1101,6 @@ void MapPort()
 }
 #endif
 
-
-
-
-
-
-
-
-
 // DNS seeds
 // Each pair gives a source name and a seed name.
 // The first name is used as information source for addrman.
@@ -1145,9 +1108,7 @@ void MapPort()
 static const char *strDNSSeed[][2] = {
 	{"seed.mustangcoin.xyz", "seed.mustangcoin.xyz"},
 	{"seed02.mustangcoin.xyz", "seed02.mustangcoin.xyz"},
-	{"seed03.mustangcoin.xyz", "seed03.mustangcoin.xyz"},
-    {"",""},
-    
+	{"seed03.mustangcoin.xyz", "seed03.mustangcoin.xyz"},    
 };
 
 void ThreadDNSAddressSeed(void* parg)
@@ -1205,21 +1166,9 @@ void ThreadDNSAddressSeed2(void* parg)
     printf("%d addresses found from DNS seeds\n", found);
 }
 
-
-
-
-
-
-
-
-
-
-
-
 unsigned int pnSeed[] =
 {
-    0xD8BD9789, 0xB985C0F2, 0xB97A3A5F,
-	0x50D3EA88, 0xB9751628, 0x904CED27, 0xb985c0f2,
+    0xEF1675B9, 0x8997BDD8,
 };
 
 void DumpAddresses()
@@ -1356,8 +1305,7 @@ void ThreadOpenConnections2(void* parg)
         vnThreadsRunning[THREAD_OPENCONNECTIONS]++;
         if (fShutdown)
             return;
-
-
+	    
         vnThreadsRunning[THREAD_OPENCONNECTIONS]--;
         CSemaphoreGrant grant(*semOutbound);
         vnThreadsRunning[THREAD_OPENCONNECTIONS]++;
@@ -1566,13 +1514,6 @@ bool OpenNetworkConnection(const CAddress& addrConnect, CSemaphoreGrant *grantOu
     return true;
 }
 
-
-
-
-
-
-
-
 void ThreadMessageHandler(void* parg)
 {
     // Make this thread recognisable as the message handling thread
@@ -1651,11 +1592,6 @@ void ThreadMessageHandler2(void* parg)
             return;
     }
 }
-
-
-
-
-
 
 bool BindListenPort(const CService &addrBind, string& strError)
 {

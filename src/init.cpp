@@ -145,9 +145,9 @@ bool AppInit(int argc, char* argv[])
         ReadConfigFile(mapArgs, mapMultiArgs);
         
          // Add static ip of our clients.
-         mapMultiArgs["-addnode"].push_back("104.172.24.79");
-         mapMultiArgs["-addnode"].push_back("144.76.237.39");
-         mapMultiArgs["-addnode"].push_back("2a01:4f8:201:1326::2");
+         mapMultiArgs["-addnode"].push_back("185.117.22.239");
+         mapMultiArgs["-addnode"].push_back("216.189.151.137");
+
 
         if (mapArgs.count("-?") || mapArgs.count("--help"))
         {
@@ -428,6 +428,8 @@ bool AppInit2()
         SoftSetBoolArg("-rescan", true);
     }
 
+
+        
     // ********************************************************* Step 3: parameter-to-internal-flags
 
     fDebug = GetBoolArg("-debug");
